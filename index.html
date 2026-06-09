@@ -5,63 +5,222 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yachay Pacha</title>
 <style>
-body{margin:0;font-family:Arial,sans-serif;line-height:1.6;color:#333}
-header{background:#2e7d32;color:#fff;padding:18px}
-nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between}
-nav a{color:#fff;text-decoration:none;margin-left:15px}
-.hero{background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');background-size:cover;background-position:center;height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff}
-.hero h1{font-size:56px}
-section{padding:60px 20px;max-width:1200px;margin:auto}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.card{background:#f5f5f5;padding:20px;border-radius:10px}
-footer{background:#111;color:#fff;text-align:center;padding:20px}
-.btn{background:#4caf50;color:white;padding:12px 20px;text-decoration:none;border-radius:5px}
+:root{
+--verde:#2e7d32;
+--azul:#1565c0;
+--naranja:#ef6c00;
+--gris:#f5f7fa;
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Arial,sans-serif}
+html{scroll-behavior:smooth}
+body{line-height:1.6;color:#333}
+header{
+position:fixed;top:0;width:100%;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,.1);
+z-index:1000;
+}
+nav{
+max-width:1200px;margin:auto;
+display:flex;justify-content:space-between;align-items:center;
+padding:15px 20px;
+}
+.logo{font-size:28px;font-weight:bold;color:var(--verde)}
+nav ul{display:flex;list-style:none;gap:20px}
+nav a{text-decoration:none;color:#333;font-weight:600}
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1600&q=80');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+.hero h1{font-size:70px}
+.hero p{font-size:24px;max-width:800px;margin:20px auto}
+.btn{
+display:inline-block;
+padding:14px 28px;
+background:var(--naranja);
+color:white;
+text-decoration:none;
+border-radius:8px;
+margin:10px;
+}
+section{padding:90px 20px}
+.container{max-width:1200px;margin:auto}
+h2{text-align:center;color:var(--verde);margin-bottom:30px;font-size:40px}
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+.alt{background:var(--gris)}
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+text-align:center;
+}
+.stat{
+background:white;padding:30px;border-radius:12px;
+}
+.stat h3{font-size:42px;color:var(--azul)}
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:15px;
+}
+.gallery img{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:10px;
+}
+.contact{
+background:linear-gradient(135deg,var(--verde),var(--azul));
+color:white;
+text-align:center;
+}
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:25px;
+}
+@media(max-width:768px){
+.hero h1{font-size:45px}
+nav ul{display:none}
+}
 </style>
 </head>
 <body>
+
 <header>
 <nav>
-<div><strong>Yachay Pacha</strong></div>
-<div>
-<a href="#nosotros">Nosotros</a>
-<a href="#programas">Programas</a>
-<a href="#contacto">Contacto</a>
-</div>
+<div class="logo">Yachay Pacha</div>
+<ul>
+<li><a href="#nosotros">Nosotros</a></li>
+<li><a href="#vision">Visión</a></li>
+<li><a href="#programas">Programas</a></li>
+<li><a href="#proyectos">Proyectos</a></li>
+<li><a href="#impacto">Impacto</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
 </nav>
 </header>
 
-<div class="hero">
+<section class="hero">
 <div>
 <h1>Yachay Pacha</h1>
-<p>Desarrollo comunitario, acción climática y liderazgo para transformar comunidades.</p>
-<a class="btn" href="#nosotros">Conócenos</a>
+<p>Conocimiento, territorio y comunidad para construir un futuro sostenible.</p>
+<a href="#nosotros" class="btn">Conócenos</a>
+<a href="#proyectos" class="btn">Nuestros Proyectos</a>
 </div>
-</div>
+</section>
 
 <section id="nosotros">
+<div class="container">
 <h2>¿Quiénes Somos?</h2>
-<p>Yachay Pacha es una organización comunitaria orientada a fortalecer el desarrollo sostenible, la participación ciudadana, la educación ambiental, la salud comunitaria y el liderazgo juvenil en Ventanilla, Callao y otras comunidades del Perú.</p>
+<p style="text-align:center;max-width:900px;margin:auto;font-size:20px">
+Yachay Pacha es una organización social comunitaria comprometida con el desarrollo sostenible,
+la participación ciudadana, el liderazgo juvenil y la protección del medio ambiente.
+Trabajamos junto a las comunidades para generar oportunidades, fortalecer capacidades y promover el bienestar colectivo.
+</p>
+</div>
+</section>
+
+<section id="vision" class="alt">
+<div class="container">
+<h2>Misión y Visión</h2>
+<div class="cards">
+<div class="card">
+<h3>Misión</h3>
+<p>Promover el desarrollo comunitario mediante la educación, la participación social,
+la acción climática y la construcción de comunidades resilientes.</p>
+</div>
+<div class="card">
+<h3>Visión</h3>
+<p>Ser una organización referente en innovación social y sostenibilidad,
+contribuyendo a comunidades más inclusivas, saludables y preparadas para el futuro.</p>
+</div>
+</div>
+</div>
 </section>
 
 <section id="programas">
-<h2>Nuestras Líneas de Acción</h2>
+<div class="container">
+<h2>Programas</h2>
 <div class="cards">
-<div class="card"><h3>🌱 Medio Ambiente</h3><p>Educación ambiental, reciclaje y acción climática.</p></div>
-<div class="card"><h3>👥 Comunidad</h3><p>Fortalecimiento organizacional y participación ciudadana.</p></div>
-<div class="card"><h3>🚀 Juventud</h3><p>Liderazgo, voluntariado y formación de jóvenes.</p></div>
-<div class="card"><h3>❤️ Salud</h3><p>Promoción de la salud y bienestar comunitario.</p></div>
+<div class="card"><h3>🌱 Ambiente y Cambio Climático</h3><p>Educación ambiental, reciclaje y resiliencia climática.</p></div>
+<div class="card"><h3>👥 Desarrollo Comunitario</h3><p>Fortalecimiento organizacional y participación ciudadana.</p></div>
+<div class="card"><h3>🚀 Juventudes</h3><p>Liderazgo, emprendimiento y voluntariado.</p></div>
+<div class="card"><h3>❤️ Salud y Bienestar</h3><p>Promoción de la salud y prevención comunitaria.</p></div>
+</div>
 </div>
 </section>
 
-<section id="contacto">
-<h2>Contacto</h2>
+<section id="proyectos" class="alt">
+<div class="container">
+<h2>Proyectos Destacados</h2>
+<div class="cards">
+<div class="card"><h3>Comunidades Resilientes</h3><p>Fortalecimiento de capacidades frente al cambio climático.</p></div>
+<div class="card"><h3>Escuelas Verdes</h3><p>Educación ambiental para estudiantes y docentes.</p></div>
+<div class="card"><h3>Jóvenes por el Cambio</h3><p>Formación de líderes comunitarios juveniles.</p></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>Galería</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=900&q=80">
+<img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=900&q=80">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80">
+</div>
+</div>
+</section>
+
+<section id="impacto" class="alt">
+<div class="container">
+<h2>Nuestro Impacto</h2>
+<div class="stats">
+<div class="stat"><h3>2500+</h3><p>Beneficiarios</p></div>
+<div class="stat"><h3>50+</h3><p>Talleres</p></div>
+<div class="stat"><h3>20+</h3><p>Comunidades</p></div>
+<div class="stat"><h3>35+</h3><p>Voluntarios</p></div>
+</div>
+</div>
+</section>
+
+<section id="contacto" class="contact">
+<div class="container">
+<h2 style="color:white">Contáctanos</h2>
 <p>📍 Ventanilla, Callao - Perú</p>
 <p>📧 contacto@yachaypacha.org</p>
 <p>📱 +51 999 999 999</p>
+<br>
+<a href="#" class="btn">Quiero ser voluntario</a>
+</div>
 </section>
 
 <footer>
-© 2026 Yachay Pacha - Todos los derechos reservados.
+<p><strong>Yachay Pacha</strong></p>
+<p>Aprender de la tierra para transformar el futuro.</p>
 </footer>
+
 </body>
 </html>
